@@ -7,23 +7,25 @@ import Category from '../components/Category';
 import ProductCard from '../components/ProductCard';
 import {smartWatch} from '../Data/smartwatch';
 import { headphones } from '../Data/headPhone';
-import { category } from '../Data/categorydata';
 const HomeScreens = () => {
   
   const [data, setData] = useState(smartWatch);
 
-  const [selectedCategory, setSelectedCategory] = useState("Smart Watch");
+  const [selectedCategory, setSelectedCategory] = useState("Smart watch");
 
   
-   
-    const handleUpdateCategory = (newCategory) => {
-      if (newCategory === "Smart Watch") {
-        setData(smartWatch);
-      } else if (newCategory === "Headphones") {
-        setData(headphones);
-      }
-      setSelectedCategory(newCategory);
-    };
+  const handleUpdateCategory = (newCategory) => {
+    if (newCategory === "Smart Watch") {
+      setData([...smartWatch]);
+    } else if (newCategory === "Headphones") {
+      setData([...headphones]);
+    }
+    setSelectedCategory(newCategory);
+  
+    console.log('Data after update:', data);  // Debug the updated data
+  };
+  
+  
   return (
     <View style={styles.container}>
       <FlatList

@@ -6,12 +6,7 @@ import {colors} from '../constants/color';
 import {category} from '../Data/categorydata';
 
 
-
-
-const Category = ({selectedCategory,handleUpdateCategory}) => {
-  
- 
-
+const Category = ({selectedCategory, handleUpdateCategory}) => {
   return (
     <FlatList
       data={category}
